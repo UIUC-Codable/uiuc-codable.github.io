@@ -41,3 +41,6 @@ defaults:
       type: "posts"
     values:
       permalink: ""
+
+include:
+  - _posts
