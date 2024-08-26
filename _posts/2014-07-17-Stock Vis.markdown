@@ -1,0 +1,11 @@
+---
+layout: default
+modal-id: 2
+date: 2014-07-17
+img: PL_stock.png
+alt: image-alt
+project-date: April 2014
+client: Start Bootstrap
+category: Web Development
+description: 파이썬 러닝팀에서 배운 데이터 시각화 기술을 통하여 원하는 주식의 차트를 시각화 해본 프로젝트입니다. 시계열 데이터의 시각화는 주식 뿐만이 아닌 시간에 따라 달라지는 모든 데이터에도 적용이 가능하기에 유용합니다.
+---
