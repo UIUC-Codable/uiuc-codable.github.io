@@ -1,4 +1,39 @@
 <!-- Team Section -->
+<style>
+  .imagecarousel-wrapper {
+      overflow: hidden;
+      width: 100%;
+  }
+
+  .imagecarousel {
+      position: relative;
+      display: flex;
+      gap: 20px;
+      height: 100px;
+      margin-bottom: 30px;
+      width: fit-content;
+      animation: bannermove 50s linear infinite;
+  }
+
+  .imagecarousel img {
+      margin: 0;
+      box-shadow: 2px 2px 8px #8a8a8a;
+      height: 100px;
+      /* Fixed height */
+      width: auto;
+      /* Width adjusts based on aspect ratio */
+  }
+
+  @keyframes bannermove {
+      0% {
+          transform: translateX(0);
+      }
+
+      100% {
+          transform: translateX(-50%);
+      }
+  }
+</style>
 <section class="bg-gray-100 py-5" id="teams">
   <div class="container">
     <!-- Section Title -->
