@@ -1,0 +1,43 @@
+# Site settings
+title: Codable
+email: codableuiuc@gmail.com
+skills: "Coding Made Simple, for Everyone"
+meta_author: Yeon Jehyeok
+
+# Contact form:
+# - static : pass through formspree.io to validate email sending
+# - disqus : replace contact form by disqus thread
+# - comment the line below if you want to stick with the default PHP contact form
+contact: static
+
+# Color settings (hex-codes without the leading hash-tag)
+color:
+  primary: FD813F
+  primary-rgb: "253,129,63"
+  secondary: FD813F 
+  secondary-dark: b15a2c
+
+# Footer settings
+footer:
+  copyright: Dr. Henry Jekyll
+  location: Contact
+
+# Postal address (add as many lines as necessary)
+address:
+  - line: Kakaotalk ID - jehyeoky1016
+  - line: Instagram - jehyeoky
+
+# Credits content
+credits: 'Freelancer is a free to use, open source Bootstrap theme created by <a href="http://startbootstrap.com">Start Bootstrap</a>.'
+
+# Build settings
+markdown: kramdown
+permalink: pretty
+
+#for posts
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      permalink: ""
