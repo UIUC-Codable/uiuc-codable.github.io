@@ -1,3 +1,38 @@
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  var preferredLanguage = localStorage.getItem('preferredLanguage');
+  if (!preferredLanguage) {
+    preferredLanguage = 'korean';
+  }
+  var englishText = document.querySelectorAll('.english');
+  var koreanText = document.querySelectorAll('.korean');
+
+  if (preferredLanguage === 'korean') {
+    englishText.forEach(el => el.style.display = 'none');
+    koreanText.forEach(el => el.style.display = 'block');
+  } else {
+    englishText.forEach(el => el.style.display = 'block');
+    koreanText.forEach(el => el.style.display = 'none');
+  }
+});
+
+window.addEventListener('storage', function(event) {
+  if (event.key === 'preferredLanguage') {
+    var preferredLanguage = event.newValue;
+    var englishText = document.querySelectorAll('.english');
+    var koreanText = document.querySelectorAll('.korean');
+
+    if (preferredLanguage === 'korean') {
+      englishText.forEach(el => el.style.display = 'none');
+      koreanText.forEach(el => el.style.display = 'block');
+    } else {
+      englishText.forEach(el => el.style.display = 'block');
+      koreanText.forEach(el => el.style.display = 'none');
+    }
+  }
+});
+</script>
+
 <!-- Contact Section -->
 <section id="contact">
   <div class="container">
@@ -15,5 +50,8 @@
         </a>
       </div>
     </div>
+    <p class="korean text-center" style="margin-top:40px;">지원기간: ~ 9/5 (목) 11:59PM CST</p>
+      <p class="english text-center" style="margin-top:40px;">Application Period: ~ 9/5 (Th) 11:59PM CST</p>
+    
   </div>
 </section>

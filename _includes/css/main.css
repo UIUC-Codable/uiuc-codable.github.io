@@ -523,6 +523,7 @@ footer .footer-below {
 .imagecarousel img {
     margin: 0px 0px;
     box-shadow: 2px 2px 8px #8a8a8a;
+    background-color: white;
 }
 
 .imagecarousel {
