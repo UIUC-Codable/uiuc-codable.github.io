@@ -14,13 +14,56 @@
         var englishText = document.querySelectorAll('.english');
         var koreanText = document.querySelectorAll('.korean');
         var isKoreanVisible = koreanText[0].style.display === 'block';
-    
+        
         englishText.forEach(el => el.style.display = isKoreanVisible ? 'block' : 'none');
         koreanText.forEach(el => el.style.display = isKoreanVisible ? 'none' : 'block');
         
+        var newLanguage = isKoreanVisible ? 'english' : 'korean';
+        localStorage.setItem('preferredLanguage', newLanguage);
+        
         document.getElementById('toggleLanguage').innerText = isKoreanVisible ? 'Switch to Korean' : 'Switch to English';
       }
+    
+      // Check the preferred language on page load
+      document.addEventListener('DOMContentLoaded', function() {
+        let preferredLanguage = localStorage.getItem('preferredLanguage');
+        if (!preferredLanguage) {
+          preferredLanguage = 'english';
+          localStorage.setItem('preferredLanguage', preferredLanguage);
+        };
+        var englishText = document.querySelectorAll('.english');
+        var koreanText = document.querySelectorAll('.korean');
+        
+        if (preferredLanguage === 'korean') {
+          englishText.forEach(el => el.style.display = 'none');
+          koreanText.forEach(el => el.style.display = 'block');
+          document.getElementById('toggleLanguage').innerText = 'Switch to English';
+        } else {
+          englishText.forEach(el => el.style.display = 'block');
+          koreanText.forEach(el => el.style.display = 'none');
+          document.getElementById('toggleLanguage').innerText = 'Switch to Korean';
+        }
+      });
+
+      window.addEventListener('storage', function(event) {
+      if (event.key === 'preferredLanguage') {
+        var preferredLanguage = event.newValue;
+        var englishText = document.querySelectorAll('.english');
+        var koreanText = document.querySelectorAll('.korean');
+
+        if (preferredLanguage === 'korean') {
+          englishText.forEach(el => el.style.display = 'none');
+          koreanText.forEach(el => el.style.display = 'block');
+          document.getElementById('toggleLanguage').innerText = 'Switch to English';
+        } else {
+          englishText.forEach(el => el.style.display = 'block');
+          koreanText.forEach(el => el.style.display = 'none');
+          document.getElementById('toggleLanguage').innerText = 'Switch to Korean';
+        }
+      }
+    });
     </script>
+    
     <br>
     <div class="row">
       <div class="col-lg-4 col-lg-offset-2">

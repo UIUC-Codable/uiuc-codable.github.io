@@ -8,6 +8,41 @@
         <br>
       </div>
     </div>
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+      var preferredLanguage = localStorage.getItem('preferredLanguage');
+      if (!preferredLanguage) {
+        preferredLanguage = 'english';
+      }
+      var englishText = document.querySelectorAll('.english');
+      var koreanText = document.querySelectorAll('.korean');
+
+      if (preferredLanguage === 'korean') {
+        englishText.forEach(el => el.style.display = 'none');
+        koreanText.forEach(el => el.style.display = 'block');
+      } else {
+        englishText.forEach(el => el.style.display = 'block');
+        koreanText.forEach(el => el.style.display = 'none');
+      }
+    });
+
+    window.addEventListener('storage', function(event) {
+      if (event.key === 'preferredLanguage') {
+        var preferredLanguage = event.newValue;
+        var englishText = document.querySelectorAll('.english');
+        var koreanText = document.querySelectorAll('.korean');
+
+        if (preferredLanguage === 'korean') {
+          englishText.forEach(el => el.style.display = 'none');
+          koreanText.forEach(el => el.style.display = 'block');
+        } else {
+          englishText.forEach(el => el.style.display = 'block');
+          koreanText.forEach(el => el.style.display = 'none');
+        }
+      }
+    });
+    </script>
 
     <!-- Team Row 1: Python Learning Team -->
     <div class="row bg-white py-4">
@@ -103,7 +138,8 @@
       </div>
       <div class="col-lg-6 d-flex flex-column justify-content-center">
         <h3>Algorithms & Interview Preparation Team</h3>
-        <p>Description about the Algorithms & Interview Preparation Team goes here. This could include their focus areas, resources, or workshops.</p>
+        <p class="korean">한글버전 설명</p>
+        <p class="english">this is english</p>
         
         <!-- Project Grid for Algorithms & Interview Preparation Team -->
         <div class="row mt-4">
